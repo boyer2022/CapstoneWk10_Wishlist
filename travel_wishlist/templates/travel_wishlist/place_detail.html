@@ -12,6 +12,7 @@
     <P>{{ place.notes|default:"No Notes" }}</p>
     <h3>Date Visited</h3>
     <P>{{ place.date_visited|default:"Date visited not set" }}</p>
+
     <h3>Photo</h3>
     {% if place.photo %}
         <img src="{{ place.photo.url }}">
@@ -38,7 +39,6 @@
 
 
 {% else %}
-
   <p>You have not visited {{ place.name }} yet.</p>
 
   <form action="{% url 'place_was_visited' place.pk %}" method="POST">

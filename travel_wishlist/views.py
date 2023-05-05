@@ -1,12 +1,12 @@
 from django.shortcuts import render, redirect,  get_object_or_404
-from django.conf.urls import url
+
 from .models import Place
 from .forms import NewPlaceForm, TripReviewForm
 
 # Log in decorator
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
-from django.http import HttpResponseForbidden
+from django.http import HttpResponseForbidden       # Means prevents users that are not allowed to be on current profile. Error 403
 
 # Create your views here.
 @login_required
